@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server02",
+      "author": "typicode02"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "login": {
+    "username": "abc",
+    "password": "123456 "
+  },
+  "profile": {
+    "name": "typicode"
+  }
+}
