@@ -18,6 +18,7 @@ function App() {
         >
           Learn React fc
           110
+          120
         </a>
       </header>
     </div>
