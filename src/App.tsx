@@ -16,7 +16,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React 阮航
+          Learn React fc
+          阮航
         </a>
       </header>
     </div>
