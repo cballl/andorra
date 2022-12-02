@@ -1,37 +1,26 @@
-import React, {FormEvent} from 'react';
+import React, {PureComponent, ReactElement} from 'react';
 
-const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3004'
+interface IProps<T =any> {
+     name:string,
+     children: ReactElement
+}
 
-const IndexLogin = (props: any) => {
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        const usernameElement = (event.currentTarget.elements[0] as HTMLFormElement).value
-        const passwordElement = (event.currentTarget.elements[1] as HTMLFormElement).value
-        fetch(`${baseUrl}/login`, {
-            method: "post",
-            body: JSON.stringify({
-                "username":"abc",
-                "password":"123456"
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then((res: Response) => {
-            console.log(res.json())
-        })
+interface IState<T = {}> {
+    count:number
+}
+
+class IndexLogin extends PureComponent<IProps,IState> {
+   state ={
+        count:1
     }
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor={'username'}>账号</label>
-                <input type={'text'} id={'username'} defaultValue={'abc'}/>
-                <label htmlFor={'password'}>密码</label>
-                <input type={'password'} id={'password'} defaultValue={'123456'}/>
-                <button type={'submit'}>登录</button>
-            </form>
-        </div>
-    );
-};
+    render() {
+        return (
+            <div>
+                {this.state.count}
+            </div>
+        );
+    }
+}
 
 
 export default IndexLogin;

@@ -1,25 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {PureComponent} from 'react';
 
-const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3004'
+class IndexSearch extends PureComponent {
+    render() {
+        return (
+            <div>
 
-const SearchIndex = (props: any) => {
-
-    let [useData, setUseData] = useState([])
-    useEffect(() => {
-        fetch(`${baseUrl}/users`).then((res: Response) => {
-             res.json().then((response: any) => {
-                setUseData(response)
-            })
-        })
-    },[])
-console.log(useData)
-
-    return (
-        <div>
-
-        </div>
-    );
-};
+            </div>
+        );
+    }
+}
 
 
-export default SearchIndex;
+export default IndexSearch;
