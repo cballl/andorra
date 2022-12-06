@@ -29,7 +29,6 @@ class Http {
         // 全局拦截器
         this.instance.interceptors.request.use(
             (config: HttpRequestConfig) => {
-                console.log('1234567')
                 return config
             },
             (error: any) => {
@@ -52,7 +51,6 @@ class Http {
         if (this.interceptorsObj?.requestIntercetor) {
             config = this.interceptorsObj.requestIntercetor(config)
         }
-
         try {
             let result = await this.instance.request(config)
             if (this.interceptorsObj?.responseInterceptor) {
@@ -62,16 +60,6 @@ class Http {
         } catch (e:any) {
             return new Error(e)
         }
-        // return new Promise<AxiosResponse>((resolve, reject)=>{
-        //     this.instance.request(config).then(res=>{
-        //         if(this.interceptorsObj?.responseInterceptor){
-        //             res = this.interceptorsObj.responseInterceptor(res)
-        //         }
-        //         return res
-        //     }).catch((error)=>{
-        //         console.log(error)
-        //     })
-        // })
     }
 }
 

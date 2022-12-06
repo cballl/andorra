@@ -1,16 +1,10 @@
 import React from "react";
+import Login from "./pages/login";
 
-
-import Event from  './demo/Event'
-
-type FUN = {name:string}
-
-function App(props:any){
+function App(){
   return (
     <div className="App">
-
-
-        <Event/>
+      <Login/>
     </div>
   );
 }
