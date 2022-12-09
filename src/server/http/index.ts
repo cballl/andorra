@@ -28,7 +28,13 @@ class Http {
 
         // 全局拦截器
         this.instance.interceptors.request.use(
-            (config: HttpRequestConfig) => {
+            (config: HttpRequestConfig | any) => {
+
+                const token = localStorage.getItem('token')
+                if(token && config.url !== '/admin/login'){
+                    config.headers['token'] = token
+                }
+                // console.log(config.url)
                 return config
             },
             (error: any) => {
@@ -57,7 +63,7 @@ class Http {
                 result = this.interceptorsObj.responseInterceptor(result)
             }
             return result
-        } catch (e:any) {
+        } catch (e: any) {
             return new Error(e)
         }
     }

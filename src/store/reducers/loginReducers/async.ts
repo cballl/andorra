@@ -1,4 +1,4 @@
-import {httpGetLogin} from '../../../server/index'
+import {httpGetLogin} from '../../../server'
 import {Login} from './type'
 import {GET_TOKEN} from '../actionType'
 
